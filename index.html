@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TestCorona | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="qrcode-reader.min.css">
+    <link href="bootstrap-editable.css" rel="stylesheet">
+
+
+</head>
+
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="#"><b>Test</b>Corona</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Certificate Details : </p>
+            <div class="row">
+                <div class="col">
+                    <b>Name</b> : AHMED SAID YOUSSEF MOHAMMED <br />
+                    <b>Date of birth</b> : 1972-04-01 <br />
+                    <b>Mobile</b> : +966503458711 <br />
+                    <b>Nationality</b> : Egypt <br />
+                    <b>Identification Type</b> : جواز السفر<br />
+                    <b>Identification ID</b> : A21149443 <br />
+                    <b>Gender</b> :  Male  <br /> <hr />
+                    <b>Result Time</b> : 2021-01-02 19:14:00 <br />
+                    <b>Hours since result</b> : 556 Hours <br />
+                    <b>Result</b> : Negative <br /><br /><br />
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;">
+                    <div class="alert alert-danger" role="alert" style=" display: none; "></div>
+                </div>
+            </div>
+            <a class="btn btn-danger btn-block" id="scan-qr" href="#">QR Scanner</a>
+
+            <!-- /.social-auth-links -->
+
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="adminlte.min.js"></script>
+
+<script src="qrcode-reader.min.js"></script>
+<script>
+    $.qrCodeReader.jsQRpath = "jsQR.min.js";
+    $.qrCodeReader.beepPath = "beep.mp3";
+    $("#scan-qr").qrCodeReader({
+        target: "#target-input",
+        audioFeedback: true,
+        multiple: false,
+        callback: function(code) {
+            if(code != "" && code != undefined){
+                window.location.href=code;
+            }
+        }
+    });
+</script>
+</body>
+</html>
