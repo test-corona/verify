@@ -36,16 +36,16 @@
             <p class="login-box-msg">Certificate Details : </p>
             <div class="row">
                 <div class="col">
-                    <b>Name</b> : AHMED SAID YOUSSEF MOHAMMED <br />
-                    <b>Date of birth</b> : 1972-04-01 <br />
-                    <b>Mobile</b> : +966503458711 <br />
-                    <b>Nationality</b> : Egypt <br />
-                    <b>Identification Type</b> : جواز السفر<br />
-                    <b>Identification ID</b> : A21149443 <br />
-                    <b>Gender</b> :  Male  <br /> <hr />
-                    <b>Result Time</b> : 2021-01-02 19:14:00 <br />
-                    <b>Hours since result</b> : 556 Hours <br />
-                    <b>Result</b> : Negative <br /><br /><br />
+                    <b>Name</b> : NABIL HAMD HASSAN AHMED<br>
+                    <b>Date of birth</b> : 1976-03-30 <br>
+                    <b>Mobile</b> : +966569517961 <br>
+                    <b>Nationality</b> : Egypt <br>
+                    <b>Identification Type</b> : جواز السفر<br>
+                    <b>Identification ID</b> : A12919126 <br>
+                    <b>Gender</b> :  Male  <br> <hr>
+                    <b>Result Time</b> : <span id="result-date"></span> <br>
+                    <b>Hours since result</b> : <span id="diff-time"></span> Hours <br>
+                    <b>Result</b> : Negative <br><br><br>
 
                 </div>
             </div>
@@ -85,6 +85,19 @@
             }
         }
     });
+
+    $(function(){
+
+        var resultDate = '2021-01-26 19:43:00',
+            resultDateStart = new Date(resultDate),
+            currentDate = new Date(),
+            diffDate = (currentDate - resultDateStart) / (1000 * 60 * 60 ),
+             days = diffDate.toFixed(1);
+
+            $('#result-date').text(resultDate)
+            $('#diff-time').text(days)
+
+    })
 </script>
 </body>
 </html>
